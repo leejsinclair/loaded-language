@@ -1,0 +1,31 @@
+{
+  "name": "loaded-language",
+  "version": "1.0.0",
+  "description": "Determine loaded words used within text",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leejsinclair/loaded-language.git"
+  },
+  "keywords": [
+    "russel",
+    "conjunction",
+    "text",
+    "regex"
+  ],
+  "author": "Lee Sincliar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leejsinclair/loaded-language/issues"
+  },
+  "homepage": "https://github.com/leejsinclair/loaded-language#readme",
+  "dependencies": {
+    "to-regex": "^3.0.2"
+  }
+}
