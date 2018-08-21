@@ -1,4 +1,5 @@
 const convertArrayToRegex = require('./lib/regex.js');
+const offensive = require('offensivewords');
 
 const anger = convertArrayToRegex( require('./lib/anger'), { 'contains': true, 'flags': 'gmi' } );
 const charged = convertArrayToRegex( require('./lib/charged'), { 'contains': true, 'flags': 'gmi' } );
@@ -55,6 +56,9 @@ function _report( text ){
         },
         'urgency': { 
             'matches': makeUnique(text.match(urgency) || [])
+        },
+        'offensive': {
+            'matches': makeUnique(offensive(text) || [] )
         }
     };
 };

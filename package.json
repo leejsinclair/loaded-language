@@ -25,7 +25,9 @@
     "url": "https://github.com/leejsinclair/loaded-language/issues"
   },
   "homepage": "https://github.com/leejsinclair/loaded-language#readme",
-  "dependencies": {},
+  "dependencies": {
+    "offensivewords": "0.0.1"
+  },
   "devDependencies": {
     "mocha": "^5.2.0"
   }

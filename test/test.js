@@ -30,13 +30,12 @@ describe('loaded-language-loadedLanguage', () => {
       assert.equal(1, result.charged.matches.length);
     })
 
-    // it('should return formatted text along with matches', () => {
-    //   let testString = 'That person is a Socialist.'
-    //   let result = loadedLanguage(testString)
-    //   assert.equal('socialist', result.charged.matches[0])
-    //   assert.equal(1, result.changed.matches.length)
-    //   assert.equal(testString, result.charged.text)
-    // })
+    it('offensive word test', () => {
+      let testString = 'That person is drunk.';
+      let result = loadedLanguage(testString);
+      assert.equal('drunk', result.offensive.matches[0]);
+      assert.equal(1, result.offensive.matches.length);
+    })
 
     it('should ignore a match within a larger word', () => {
       let testString = 'Romanticism'
