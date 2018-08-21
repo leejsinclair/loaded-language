@@ -64,7 +64,10 @@ let result = loadedLanguage(str);
 	},
 	"urgency": {
 		"matches": []
-	}
+	},
+    "offensive": {
+        "matches": []
+    }
 }
 
 
