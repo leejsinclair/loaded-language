@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
     "url": "https://github.com/leejsinclair/loaded-language/issues"
   },
   "homepage": "https://github.com/leejsinclair/loaded-language#readme",
-  "dependencies": {
-    "to-regex": "^3.0.2"
+  "dependencies": {},
+  "devDependencies": {
+    "mocha": "^5.2.0"
   }
 }

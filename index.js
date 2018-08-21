@@ -1,61 +1,66 @@
-const toRegex = require('to-regex');
+const convertArrayToRegex = require('./lib/regex.js');
 
-const anger = toRegex( require('./lib/anger'), { 'contains': true, 'flags': 'gmi' } );
-const charged = toRegex( require('./lib/charged'), { 'contains': true, 'flags': 'gmi' } );
-const confusion = toRegex( require('./lib/confusion'), { 'contains': true, 'flags': 'gmi' } );
-const curiosity = toRegex( require('./lib/curiosity'), { 'contains': true, 'flags': 'gmi' } );
-const happy = toRegex( require('./lib/happy'), { 'contains': true, 'flags': 'gmi' } );
-const inspiration = toRegex( require('./lib/inspiration'), { 'contains': true, 'flags': 'gmi' } );
-const inspire_action = toRegex( require('./lib/inspire_action'), { 'contains': true, 'flags': 'gmi' } );
-const lust = toRegex( require('./lib/lust'), { 'contains': true, 'flags': 'gmi' } );
-const maybe = toRegex( require('./lib/maybe-charged'), { 'contains': true, 'flags': 'gmi' } );
-const relaxed = toRegex( require('./lib/relaxed'), { 'contains': true, 'flags': 'gmi' } );
-const safe = toRegex( require('./lib/safe'), { 'contains': true, 'flags': 'gmi' } );
-const sexually_charged = toRegex( require('./lib/sexualy_charged'), { 'contains': true, 'flags': 'gmi' } );
-const urgency = toRegex( require('./lib/urgency'), { 'contains': true, 'flags': 'gmi' } );
+const anger = convertArrayToRegex( require('./lib/anger'), { 'contains': true, 'flags': 'gmi' } );
+const charged = convertArrayToRegex( require('./lib/charged'), { 'contains': true, 'flags': 'gmi' } );
+const confusion = convertArrayToRegex( require('./lib/confusion'), { 'contains': true, 'flags': 'gmi' } );
+const curiosity = convertArrayToRegex( require('./lib/curiosity'), { 'contains': true, 'flags': 'gmi' } );
+const happy = convertArrayToRegex( require('./lib/happy'), { 'contains': true, 'flags': 'gmi' } );
+const inspiration = convertArrayToRegex( require('./lib/inspiration'), { 'contains': true, 'flags': 'gmi' } );
+const inspire_action = convertArrayToRegex( require('./lib/inspire_action'), { 'contains': true, 'flags': 'gmi' } );
+const lust = convertArrayToRegex( require('./lib/lust'), { 'contains': true, 'flags': 'gmi' } );
+const maybe = convertArrayToRegex( require('./lib/maybe-charged'), { 'contains': true, 'flags': 'gmi' } );
+const relaxed = convertArrayToRegex( require('./lib/relaxed'), { 'contains': true, 'flags': 'gmi' } );
+const safe = convertArrayToRegex( require('./lib/safe'), { 'contains': true, 'flags': 'gmi' } );
+const sexually_charged = convertArrayToRegex( require('./lib/sexualy_charged'), { 'contains': true, 'flags': 'gmi' } );
+const urgency = convertArrayToRegex( require('./lib/urgency'), { 'contains': true, 'flags': 'gmi' } );
 
 function _report( text ){
+    text = text.toLowerCase();
     return {
         'anger': { 
-            'matches': (t.match(anger) || [])
+            'matches': makeUnique(text.match(anger) || [])
         },
         'charged': { 
-            'matches': (t.match(charged) || [])
+            'matches': makeUnique(text.match(charged) || [])
         },
         'confusion': { 
-            'matches': (t.match(confusion) || [])
+            'matches': makeUnique(text.match(confusion) || [])
         },
         'curiosity': { 
-            'matches': (t.match(curiosity) || [])
+            'matches': makeUnique(text.match(curiosity) || [])
         },
         'happy': { 
-            'matches': (t.match(happy) || [])
+            'matches': makeUnique(text.match(happy) || [])
         },
         'inspiration': { 
-            'matches': (t.match(inspiration) || [])
+            'matches': makeUnique(text.match(inspiration) || [])
         },
         'inspire_action': { 
-            'matches': (t.match(inspire_action) || [])
+            'matches': makeUnique(text.match(inspire_action) || [])
         },
         'lust': { 
-            'matches': (t.match(lust) || [] )
+            'matches': makeUnique(text.match(lust) || [] )
         },
         'maybe': { 
-            'matches': (t.match(maybe) || [])
+            'matches': makeUnique(text.match(maybe) || [])
         },
         'relaxed': { 
-            'matches': (t.match(relaxed) || [])
+            'matches': makeUnique(text.match(relaxed) || [])
         },
         'safe': { 
-            'matches': (t.match(safe) || [])
+            'matches': makeUnique(text.match(safe) || [])
         },
         'sexually_charged': { 
-            'matches': (t.match(sexually_charged) || [])
+            'matches': makeUnique(text.match(sexually_charged) || [])
         },
         'urgency': { 
-            'matches': (t.match(urgency) || [])
+            'matches': makeUnique(text.match(urgency) || [])
         }
     };
 };
+
+function makeUnique(arr) {
+    return arr.filter((el, i, a) => i === a.indexOf(el));
+}
 
 module.exports = _report;
