@@ -1,6 +1,6 @@
 {
   "name": "loaded-language",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Determine loaded words used within text",
   "main": "index.js",
   "directories": {
