@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/leejsinclair/loaded-language#readme",
   "dependencies": {
-    "offensivewords": "0.0.1"
+    "offensivewords": "1.0.0"
   },
   "devDependencies": {
     "mocha": "^5.2.0"
