@@ -42,6 +42,12 @@ describe('loaded-language-loadedLanguage', () => {
       let result = loadedLanguage(testString);
       assert.equal(0, result.charged.matches.length);
     })
+
+    it('should match plurals', () => {
+      let testString = 'anarchists'
+      let result = loadedLanguage(testString);
+      assert.equal(1, result.charged.matches.length);
+    })
   })
 })
 

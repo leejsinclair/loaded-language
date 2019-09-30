@@ -1,6 +1,6 @@
 {
   "name": "loaded-language",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Determine loaded words used within text",
   "main": "index.js",
   "directories": {
@@ -26,7 +26,8 @@
   },
   "homepage": "https://github.com/leejsinclair/loaded-language#readme",
   "dependencies": {
-    "offensivewords": "^2.0.10"
+    "offensivewords": "^2.0.10",
+    "plur": "^3.1.1"
   },
   "devDependencies": {
     "mocha": "^5.2.0"
